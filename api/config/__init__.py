@@ -1,12 +1,13 @@
 from decouple import config
 import os
 from datetime import timedelta
+import urllib.parse
 
 BASE_DIR = os.path.dirname(os.path.realpath(__file__))
 
-# uri = config('DATABASE_URL') # or other relevant config var 
-# if uri.startswith('postgres://'): 
-#     uri = uri.replace('postgres://', 'postgresql://', 1)
+uri = config('DATABASE_URL') # or other relevant config var 
+
+# uri = urllib.parse.quote_plus(uri)
 
 
 class Config:
@@ -34,17 +35,17 @@ class TestConfig(Config):
 
 
 
-# class ProdConfig(Config):
-#     SQLALCHEMY_ECHO = True
-#     SQLALCHEMY_DATABASE_URI = uri
-#     SQLALCHEMY_TRACK_MODIFICATIONS = False
-#     DEBUG = config('DEBUG',False ,cast = bool)
+class ProdConfig(Config):
+    SQLALCHEMY_ECHO = True
+    SQLALCHEMY_DATABASE_URI = uri
+    SQLALCHEMY_TRACK_MODIFICATIONS = False
+    DEBUG = config('DEBUG',False ,cast = bool)
     
     
 
 config_dict = {
     'dev': DevConfig,
-    # 'prod': ProdConfig,
+    'prod': ProdConfig,
     'test': TestConfig
 }
 

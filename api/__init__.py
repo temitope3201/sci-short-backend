@@ -21,7 +21,7 @@ from .utils import cache, limiter
 
 mail = Mail()
 
-def create_app(config = config_dict['dev']):
+def create_app(config = config_dict['prod']):
 
     app = Flask(__name__)
 
