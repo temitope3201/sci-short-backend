@@ -36,7 +36,7 @@ Jinja2==3.1.2
 jsonschema==4.16.0
 limits==3.5.0
 Mako==1.2.3
-markdown-it-py==3.0.0
+markdown-it-py==2.2.0
 MarkupSafe==2.1.1
 mdurl==0.1.2
 ordered-set==4.1.0
