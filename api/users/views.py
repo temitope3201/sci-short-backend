@@ -16,7 +16,7 @@ user_namespace = Namespace('users', description='Namespace For All Registered us
 signup_model = user_namespace.model(
     'User_Signup',{
         'email': fields.String(description = 'Add Email Address', required = True),
-        'first name': fields.String(description = 'Add First Name', required = True),
+        'first_name': fields.String(description = 'Add First Name', required = True),
         'last_name': fields.String(description = 'Add Last name', required = True),
         'username': fields.String(description = 'Add A Username', required = True),
         'password': fields.String(description = 'Enter Password', required = True),
