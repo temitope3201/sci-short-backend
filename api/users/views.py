@@ -116,7 +116,7 @@ class UserSignup(Resource):
 class UserLogin(Resource):
     
 
-    @user_namespace.expect(signup_model)
+    @user_namespace.expect(login_model)
     @user_namespace.doc(description = "Create a User Login Token")
     @limiter.limit("10 per minute")
     @cache.cached(timeout=300)    
